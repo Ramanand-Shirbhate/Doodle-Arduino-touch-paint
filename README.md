@@ -1,5 +1,5 @@
 
-# arduino-touch-paint  
+# Doodle🖌️🎨 (arduino-touch-paint)
 **Turn a bare‑metal Arduino Mega into a live paint canvas!**  
 Touch‑responsive 3.5″ TFT lets you draw, pick colors, and watch raw calibration magic in real time. Dive in, tweak the resistive magic, and make the screen come alive.  
 
