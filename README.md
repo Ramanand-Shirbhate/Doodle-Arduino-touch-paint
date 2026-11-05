@@ -25,7 +25,7 @@ The result is a **stand‑alone “paint” canvas** that lives entirely on the 
 | **Graphics** | `MCUFRIEND_kbv` + `Adafruit_GFX` | Low‑level driver for the ILI9486 and high‑level drawing primitives (lines, rectangles, text). |
 | **Touch** | `TouchScreen.h` (modified) | Reads raw X/Y resistance values from the touch panel and returns calibrated coordinates. |
 | **Development Environment** | Arduino IDE (or PlatformIO) | Compiles and uploads the `.ino` sketches to the Mega. |
-| **Media** | `MOV01361.AVI` | Demo video showing the canvas in action (useful for README or GitHub preview). |
+| **Media** | `MOV01361.mp4` | Demo video showing the canvas in action (useful for README or GitHub preview). |
 
 ---  
 
@@ -33,7 +33,7 @@ The result is a **stand‑alone “paint” canvas** that lives entirely on the 
 
 ```
 arduino-touch-paint/
-├─ MOV01361.AVI                     # Demo video – shows drawing, color picking and calibration UI.
+├─ MOV01361.mp4                     # Demo video – shows drawing, color picking and calibration UI.
 ├─ TouchScreen_Calibr_native/       # Full‑featured calibration sketch and helper files.
 │   ├─ TouchScreen_Calibr_native.ino # Main sketch that runs the calibration routine and demo.
 │   ├─ TouchScreen_kbv.cpp           # Implementation of the custom TouchScreen class that works
@@ -49,7 +49,7 @@ arduino-touch-paint/
 
 | File | What it does |
 |------|--------------|
-| **MOV01361.AVI** | A short video (≈30 s) captured from the Arduino’s TFT screen. Demonstrates the canvas, colour picker, and the raw calibration screen. Great for a quick visual preview. |
+| **MOV01361.mp4** | A short video (≈30 s) captured from the Arduino’s TFT screen. Demonstrates the canvas, colour picker, and the raw calibration screen. Great for a quick visual preview. |
 | **TouchScreen_Calibr_native/TouchScreen_Calibr_native.ino** | The **calibration demo**. Starts by prompting the user to touch four corner points, records the raw ADC values, computes the calibration constants (`TS_LEFT`, `TS_RT`, `TS_TOP`, `TS_BOT`) and stores them in EEPROM. After calibration it runs a simple drawing demo using those constants, proving that the mapping works. |
 | **TouchScreen_Calibr_native/TouchScreen_kbv.cpp** | Source implementation of a **custom TouchScreen class** that directly interfaces with the `MCUFRIEND_kbv` driver. It contains: <br>• Low‑level `readTouch()` that returns raw X/Y/pressure values. <br>• `getPoint()` that applies the calibration constants and returns a `TSPoint` in pixel coordinates. <br>• Helper functions for pressure filtering and optional smoothing. |
 | **TouchScreen_Calibr_native/TouchScreen_kbv.h** | Header file exposing the custom class, the `TSPoint` struct, and the calibration constants. Also declares the EEPROM load/save helpers used by the calibration sketch. |
@@ -126,7 +126,7 @@ The sketch reads touch points via `TouchScreen.getPoint()`, which already applie
 
 ### Optional: Using the Demo Video  
 
-The file `MOV01361.AVI` can be opened with any standard media player (VLC, Windows Media Player, etc.) to see a quick showcase of the canvas in action. Feel free to embed it in GitHub’s README using a GIF or a short clip if you publish the repo on GitHub Pages.  
+The file `MOV01361.mp4` can be opened with any standard media player (VLC, Windows Media Player, etc.) to see a quick showcase of the canvas in action. Feel free to embed it in GitHub’s README using a GIF or a short clip if you publish the repo on GitHub Pages.  
 
 ---  
 
